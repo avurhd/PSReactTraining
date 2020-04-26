@@ -29,7 +29,7 @@ const FilterPanel = ({ value, label, property }) => {
       <ul>
         {list.map((item, index) => {
           return (
-            <FormGroup check>
+            <FormGroup key={"Filter_" + index} check>
               <Label check key={`${value}_${index}`}>
                 <Input
                   type="checkbox"
