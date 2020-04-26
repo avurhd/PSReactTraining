@@ -7,6 +7,6 @@ export default configureStore({
   reducer: {
     characters: characters.reducer,
     filters: filters.reducer,
-    nameFilters: nameFilters.reducer
+    nameFilters: nameFilters.reducer,
   },
 });

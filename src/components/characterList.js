@@ -1,22 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { filteredCharacterList } from "../store/selectors";
-import ReactTimeAgo from 'react-time-ago'
+import ReactTimeAgo from "react-time-ago";
 
 export const Character = ({ item }) => {
   return (
     <article className="characterCard__Wrapper">
       <div data="card header" className="characterCard__ImgWrapper">
         <div className="card-image">
-          <img
-            src={item.image}
-            alt={item.name}
-          />
+          <img src={item.image} alt={item.name} />
         </div>
         <div className="characterCard__Title">
           <h2 className="characterCard__Title__Name">{item.name}</h2>
           <p className="characterCard__Title__Description">
-            id: {item.id} - <ReactTimeAgo date={new Date(item.created)}/>
+            id: {item.id} - <ReactTimeAgo date={new Date(item.created)} />
           </p>
         </div>
       </div>
