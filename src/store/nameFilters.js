@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const SORT_BY_TYPES = {
-  ASC: -1,
-  DESC: 1,
+  ASC: 1,
+  DESC: -1,
 };
 
 const nameFilters = createSlice({

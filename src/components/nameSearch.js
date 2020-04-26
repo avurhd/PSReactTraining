@@ -8,7 +8,7 @@ import {
   updateInput,
   updateSortByID,
   sortByID,
-  SORT_BY_TYPES
+  SORT_BY_TYPES,
 } from "../store/nameFilters";
 import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
 
@@ -79,10 +79,17 @@ export const NameSearch = () => {
           </Form>
         </Col>
         <Col xs={12} md={4}>
-          <Form inine>
+          <Form>
             <FormGroup>
               <Label>Sort By ID</Label>
-              <Input type="select" name="select" value={sortByIDValue} onChange={(e)=>{dispatch(updateSortByID(Number(e.target.value)))}}>
+              <Input
+                type="select"
+                name="select"
+                value={sortByIDValue}
+                onChange={(e) => {
+                  dispatch(updateSortByID(Number(e.target.value)));
+                }}
+              >
                 <option value={SORT_BY_TYPES.ASC}>Ascending</option>
                 <option value={SORT_BY_TYPES.DESC}>Descending</option>
               </Input>
