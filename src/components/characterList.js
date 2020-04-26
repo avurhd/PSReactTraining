@@ -51,6 +51,7 @@ export const CharacterList = () => {
       {list.map((item) => {
         return <Character key={item.id} item={item} />;
       })}
+      {list.length === 0 && <span className="No__dataView" >No Data Available. Please Try changing the Filters</span>} 
     </div>
   );
 };
