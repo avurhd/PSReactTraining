@@ -21,39 +21,39 @@ export const NameSearch = () => {
     dispatch(deleteSelected(name));
   };
   return (
-    <>
+    <div className="nameFilter__Wrapper">
       <div>
         <h1> Selected Filters</h1>
       </div>
       <div>
-        <ul>
+        <div className="chips">
           {names.map((item, index) => {
             return (
-              <li key={"name_" + index}>
+              <div key={"name_" + index} className="chips__item">
                 {item}
-                <span onClick={() => deleteName(item)}> X</span>
-              </li>
+                <span onClick={() => deleteName(item)} className="chips__item__del"> X</span>
+              </div>
             );
           })}
-        </ul>
+        </div>
       </div>
-      <div>
-        <Form inline>
-          <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-            <Label for="char_name_search" className="mr-sm-2">
-              Search By Name
-            </Label>
-            <Input
-              type="text"
-              name="char_name"
-              id="char_name_search"
-              value={nameValue}
-              onChange={(e) => {
-                dispatch(updateInput(e.target.value));
-              }}
-              placeholder=""
-            />
-          </FormGroup>
+      <Form inline className="nameFilter__FormInline">
+        <FormGroup className="mb-2 mt-2 mb-sm-0">
+          <Label for="char_name_search" className="mr-sm-2">
+            Search By Name
+          </Label>
+          <Input
+            type="text"
+            name="char_name"
+            id="char_name_search"
+            value={nameValue}
+            onChange={(e) => {
+              dispatch(updateInput(e.target.value));
+            }}
+            placeholder=""
+            className=" mr-0 mr-sm-2 mb-2 mb-sm-0"
+          />
+
           <Button
             type="submit"
             onClick={(e) => {
@@ -63,8 +63,8 @@ export const NameSearch = () => {
           >
             Submit
           </Button>
-        </Form>
-      </div>
-    </>
+        </FormGroup>
+      </Form>
+    </div>
   );
 };

@@ -23,10 +23,10 @@ const FilterPanel = ({ value, label, property }) => {
   };
 
   return (
-    <Form>
+    <Form className="filterItem__Wrapper">
       <h3>{label}</h3>
 
-      <ul>
+      <div>
         {list.map((item, index) => {
           return (
             <FormGroup key={"Filter_" + index} check>
@@ -41,13 +41,20 @@ const FilterPanel = ({ value, label, property }) => {
             </FormGroup>
           );
         })}
-      </ul>
+      </div>
     </Form>
   );
 };
 
 export const FilterList = () => {
-  return FILTER_TYPES.map((filterItem, index) => {
-    return <FilterPanel key={`Filter_${index}`} {...filterItem}></FilterPanel>;
-  });
+  return (
+    <div>
+      <h1>Filters</h1>
+      {FILTER_TYPES.map((filterItem, index) => {
+        return (
+          <FilterPanel key={`Filter_${index}`} {...filterItem}></FilterPanel>
+        );
+      })}
+    </div>
+  );
 };
