@@ -27,7 +27,7 @@ export const NameSearch = () => {
   return (
     <div className="nameFilter__Wrapper mt-2 mt-md-0">
       <div>
-        <h1> Selected Filters</h1>
+        <h1>Selected Names</h1>
       </div>
       <div>
         <div className="chips">
