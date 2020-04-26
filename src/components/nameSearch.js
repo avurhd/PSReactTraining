@@ -25,7 +25,7 @@ export const NameSearch = () => {
     dispatch(deleteSelected(name));
   };
   return (
-    <div className="nameFilter__Wrapper">
+    <div className="nameFilter__Wrapper mt-2 mt-md-0">
       <div>
         <h1> Selected Filters</h1>
       </div>
@@ -48,7 +48,7 @@ export const NameSearch = () => {
         </div>
       </div>
       <Row>
-        <Col xs={12} md={8}>
+        <Col xs={12} lg={8}>
           <Form inline className="nameFilter__FormInline">
             <FormGroup className="mb-2 mt-2 mb-sm-0">
               <Label for="char_name_search" className="mr-sm-2">
@@ -78,7 +78,7 @@ export const NameSearch = () => {
             </FormGroup>
           </Form>
         </Col>
-        <Col xs={12} md={4}>
+        <Col xs={12} lg={4}>
           <Form>
             <FormGroup>
               <Label>Sort By ID</Label>
