@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { filteredCharacterList } from "../store/selectors";
-import { Row, Col } from "reactstrap";
+import ReactTimeAgo from 'react-time-ago'
 
 export const Character = ({ item }) => {
   return (
@@ -16,7 +16,7 @@ export const Character = ({ item }) => {
         <div className="characterCard__Title">
           <h2 className="characterCard__Title__Name">{item.name}</h2>
           <p className="characterCard__Title__Description">
-            id: {item.id} - created 2 years ago
+            id: {item.id} - <ReactTimeAgo date={new Date(item.created)}/>
           </p>
         </div>
       </div>

@@ -6,6 +6,10 @@ import store from "./store";
 import { fetchCharacters } from "./store/characters";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
+import JavascriptTimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en";
+
+JavascriptTimeAgo.locale(en);
 store.dispatch(fetchCharacters());
 ReactDOM.render(
   <React.StrictMode>
