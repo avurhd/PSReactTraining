@@ -18,16 +18,16 @@ const filteredCharacterList = (state) => {
   const selectedFilters = FILTER_TYPES.filter(
     ({ value }) => (state.filters[value] || []).length
   );
-  /* list = list.filter((item)=>{
+  list = list.filter((item)=>{
     let allowed = true;
-      selectedFilters.forEach((value, property="")=>{
+      selectedFilters.forEach(({value, property=""})=>{
         const itemProperty = property ? item[value][property] : item[value];
         if((state.filters)[value].indexOf(itemProperty)<=-1){
           allowed = false;
         }
       })
     return allowed
-  }) */
+  })
   /* Name Filtering starts here */
   if (selectedNames.length) {
     list = selectedNames.reduce((pV, cV = "") => {
