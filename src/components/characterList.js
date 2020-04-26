@@ -9,37 +9,37 @@ export const Character = ({ item }) => {
       <div data="card header" className="characterCard__ImgWrapper">
         <div className="card-image">
           <img
-            src="https://rickandmortyapi.com/api/character/avatar/62.jpeg"
-            alt="Canklanker Thom"
+            src={item.image}
+            alt={item.name}
           />
         </div>
         <div className="characterCard__Title">
-          <h2 className="characterCard__Title__Name">Canklanker Thom</h2>
+          <h2 className="characterCard__Title__Name">{item.name}</h2>
           <p className="characterCard__Title__Description">
-            id: 62 - created 2 years ago
+            id: {item.id} - created 2 years ago
           </p>
         </div>
       </div>
       <div data="card info" className="characterCard__InfoWrapper">
         <div className="characterCard__TextWrapper">
           <span>STATUS</span>
-          <p>Dead</p>
+          <p>{item.status}</p>
         </div>
         <div className="characterCard__TextWrapper">
           <span>SPECIES</span>
-          <p>Alien, Gromflomite</p>
+          <p>{item.species}</p>
         </div>
         <div className="characterCard__TextWrapper">
           <span>GENDER</span>
-          <p>Male</p>
+          <p>{item.gender}</p>
         </div>
         <div className="characterCard__TextWrapper">
           <span>ORIGIN</span>
-          <p>Gromflom Prime</p>
+          <p>{item.origin && item.origin.name}</p>
         </div>
         <div className="characterCard__TextWrapper">
           <span>LAST LOCATION</span>
-          <p>unknown</p>
+          <p>{item.location && item.location.name}</p>
         </div>
       </div>
     </article>
