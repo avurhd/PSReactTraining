@@ -7,8 +7,7 @@ import {
   incrementAsync,
   selectCount,
 } from "../../app/counters";
-import styles from "./Counter.module.css";
-
+const styles = {};
 export function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
