@@ -73,7 +73,7 @@ export const NameSearch = () => {
                   submitNameSearch();
                 }}
               >
-                Submit
+                Search
               </Button>
             </FormGroup>
           </Form>
