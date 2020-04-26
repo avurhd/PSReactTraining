@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { filteredCharacterList } from "../store/selectors";
+import { dataLoading } from "../store/characters";
 import ReactTimeAgo from "react-time-ago";
 
 export const Character = ({ item }) => {
@@ -45,13 +46,20 @@ export const Character = ({ item }) => {
 
 export const CharacterList = () => {
   const list = useSelector(filteredCharacterList);
+  const isLoading = useSelector(dataLoading);
 
   return (
     <div className="characterCard">
       {list.map((item) => {
         return <Character key={item.id} item={item} />;
       })}
-      {list.length === 0 && <span className="No__dataView" >No Data Available. Please Try changing the Filters</span>} 
+      {list.length === 0 && (
+        <span className="No__dataView">
+          {isLoading
+            ? "Data Loading Please Wait..."
+            : "No Data Available. Please Try changing the Filters"}
+        </span>
+      )}
     </div>
   );
 };
