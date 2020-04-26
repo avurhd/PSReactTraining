@@ -8,4 +8,8 @@ const filterList = ({ value, property }) => (state) => {
   ];
 };
 
-export { filterList };
+const filteredCharacterList = (state) => {
+  return state.characters.list;
+};
+
+export { filterList, filteredCharacterList };

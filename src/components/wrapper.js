@@ -1,15 +1,21 @@
 import React from "react";
-import { FilterPanel } from "./filterPanel";
-import {FILTER_TYPES} from "../constants";
+import { FilterList } from "./filterPanel";
+import { CharacterList } from "./characterList";
+import { NameSearch } from "./nameSearch";
+import { Container, Row, Col } from "reactstrap";
 export const Wrapper = () => {
-  
   return (
-    <div>
-      {FILTER_TYPES.map((filterItem, index) => {
-        return (
-          <FilterPanel key={`Filter_${index}`} {...filterItem}></FilterPanel>
-        );
-      })}
-    </div>
+    <Container>
+      <Row>
+        <Col xs={12} md={4}>
+          <FilterList />
+        </Col>
+
+        <Col xs={12} md={8}>
+          <NameSearch />
+          <CharacterList />
+        </Col>
+      </Row>
+    </Container>
   );
 };

@@ -3,13 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { filterList } from "../store/selectors";
 import { filterItemParams } from "../store/filters";
 import { Form, FormGroup, Label, Input } from "reactstrap";
-export const FilterPanel = ({ value, label, property }) => {
+import { FILTER_TYPES } from "../constants";
+
+const FilterPanel = ({ value, label, property }) => {
   const { valueSelector, valueOnChange } = filterItemParams(value);
   const list = useSelector(filterList({ value, property }));
   const values = useSelector(valueSelector);
-
   const dispatch = useDispatch();
   const isChecked = (val) => values.indexOf(val) > -1;
+
   const handleOnChange = (item) => {
     let newValue;
     if (!isChecked(item)) {
@@ -19,6 +21,7 @@ export const FilterPanel = ({ value, label, property }) => {
     }
     dispatch(valueOnChange(newValue));
   };
+
   return (
     <Form>
       <h3>{label}</h3>
@@ -41,4 +44,10 @@ export const FilterPanel = ({ value, label, property }) => {
       </ul>
     </Form>
   );
+};
+
+export const FilterList = () => {
+  return FILTER_TYPES.map((filterItem, index) => {
+    return <FilterPanel key={`Filter_${index}`} {...filterItem}></FilterPanel>;
+  });
 };
