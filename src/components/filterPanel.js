@@ -24,12 +24,16 @@ const FilterPanel = ({ value, label, property }) => {
 
   return (
     <Form className="filterItem__Wrapper">
-      <h3>{label}</h3>
+      <h4>{label}</h4>
 
       <div>
         {list.map((item, index) => {
           return (
-            <FormGroup key={"Filter_" + index} check className="mb-3 mb-md-2 mb-lg-1">
+            <FormGroup
+              key={"Filter_" + index}
+              check
+              className="mb-3 mb-md-2 mb-lg-1"
+            >
               <Label check key={`${value}_${index}`}>
                 <Input
                   type="checkbox"
