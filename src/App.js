@@ -1,4 +1,5 @@
 import React from "react";
+import { Wrapper } from "./components/wrapper";
 import "./styles/index.scss";
 
 export const App = () => {
@@ -8,6 +9,7 @@ export const App = () => {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <Wrapper />
       </header>
     </div>
   );
