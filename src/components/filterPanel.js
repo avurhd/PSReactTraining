@@ -4,6 +4,7 @@ import { filterList } from "../store/selectors";
 import { filterItemParams } from "../store/filters";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 import { FILTER_TYPES } from "../constants";
+import PropTypes from "prop-types";
 
 const FilterPanel = ({ value, label, property }) => {
   const { valueSelector, valueOnChange } = filterItemParams(value);
@@ -61,4 +62,10 @@ export const FilterList = () => {
       })}
     </div>
   );
+};
+
+FilterPanel.propTypes = {
+  value: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  property: PropTypes.string,
 };

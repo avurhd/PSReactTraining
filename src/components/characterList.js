@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { filteredCharacterList } from "../store/selectors";
 import { dataLoading } from "../store/characters";
 import ReactTimeAgo from "react-time-ago";
+import PropTypes from "prop-types";
 
 export const Character = ({ item }) => {
   return (
@@ -62,4 +63,8 @@ export const CharacterList = () => {
       )}
     </div>
   );
+};
+
+Character.propTypes = {
+  item: PropTypes.object.isRequired,
 };
